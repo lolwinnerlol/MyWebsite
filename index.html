@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | 3D & Technical Artist</title>
+    <meta name="description"
+        content="Formal portfolio for a 3D and Technical Artist. Showcasing models, rigs, animations, and technical tools.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <!-- Global Parallax Particle Background -->
+    <canvas id="global-canvas"></canvas>
+
+    <header class="site-header">
+        <nav class="navbar container">
+            <div class="theme-toggle">
+                <button id="theme-btn" aria-label="Toggle Theme"
+                    style="background:none;border:none;cursor:pointer;color:var(--text-primary);padding:0;display:flex;align-items:center;">
+                    <!-- Sun Icon (for switching to light mode) -->
+                    <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon (for switching to dark mode) -->
+                    <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" width="24" height="24" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#top-works" data-i18n="navWorks">Works</a></li>
+                <li><a href="#showreel" data-i18n="navShowreel">Showreel</a></li>
+                <li><a href="#about" data-i18n="navAbout">About</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button id="lang-en" class="lang-btn">EN</button>
+                <span class="divider">|</span>
+                <button id="lang-th" class="lang-btn active">TH</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <h1 class="hero-title" data-i18n="heroTitle">Hi, I'm <span class="highlight">[Your Name]</span></h1>
+                <h2 class="hero-subtitle" data-i18n="heroSubtitle">3D Artist & Technical Artist</h2>
+                <p class="hero-text" data-i18n="heroText">Bridging the gap between art and technical execution.
+                    Specializing in rigging, tool development, and high-quality 3D assets.</p>
+
+                <div class="hero-cta">
+                    <a href="assets/docs/CV_Placeholder.pdf" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary" data-i18n="downloadCV">Download CV (PDF)</a>
+                    <div class="social-links">
+                        <!-- Replace # with actual links -->
+                        <a href="https://github.com/lolwinnerlol" target="_blank" class="social-icon"
+                            aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/suthiphan-khamnong-0b5057293" target="_blank"
+                            class="social-icon" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/lolwinnerlol/" target="_blank" class="social-icon"
+                            aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Works Section -->
+        <section id="top-works" class="works-section bg-alt">
+            <div class="container">
+                <h2 class="section-title" data-i18n="topWorksTitle">Selected Works</h2>
+                <div class="grid-works">
+                    <!-- Project 1 -->
+                    <article class="work-card">
+                        <div class="work-img-wrapper">
+                            <img src="assets/images/work1.png" alt="Project 1" loading="lazy">
+                        </div>
+                        <div class="work-info">
+                            <h3 data-i18n="work1Title">Advanced Character Rig</h3>
+                            <p data-i18n="work1Desc">Custom Python pipeline for automated facial rigging.</p>
+                            <span class="tag">Technical Art</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="work-card">
+                        <div class="work-img-wrapper">
+                            <img src="assets/images/work2.png" alt="Project 2" loading="lazy">
+                        </div>
+                        <div class="work-info">
+                            <h3 data-i18n="work2Title">Sci-Fi Environment</h3>
+                            <p data-i18n="work2Desc">Real-time modular environment created in Unreal Engine.</p>
+                            <span class="tag">3D Art</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="work-card">
+                        <div class="work-img-wrapper">
+                            <img src="assets/images/work3.png" alt="Project 3" loading="lazy">
+                        </div>
+                        <div class="work-info">
+                            <h3 data-i18n="work3Title">Cloth Simulation Tool</h3>
+                            <p data-i18n="work3Desc">Custom VBD cloth solver implementation in Blender.</p>
+                            <span class="tag">Tool Dev</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showreel Section -->
+        <section id="showreel" class="showreel-section bg-glass">
+            <div class="container container-sm">
+                <h2 class="section-title" data-i18n="showreelTitle">Showreel</h2>
+                <div class="video-container">
+                    <!-- Replace src with your actual youtube/vimeo link -->
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Showreel" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesser Works -->
+        <section id="other-works" class="other-works-section bg-alt">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="otherWorksTitle">Additional Projects</h2>
+                <div class="grid-other-works">
+                    <!-- Smaller cards -->
+                    <a href="#" class="other-work-item">
+                        <img src="assets/images/work1.png" alt="Other work 1" loading="lazy">
+                        <div class="overlay">
+                            <span data-i18n="other1">Hard Surface Prop</span>
+                        </div>
+                    </a>
+                    <a href="#" class="other-work-item">
+                        <img src="assets/images/work2.png" alt="Other work 2" loading="lazy">
+                        <div class="overlay">
+                            <span data-i18n="other2">Python Script Suite</span>
+                        </div>
+                    </a>
+                    <a href="#" class="other-work-item">
+                        <img src="assets/images/work3.png" alt="Other work 3" loading="lazy">
+                        <div class="overlay">
+                            <span data-i18n="other3">Character Sculpt</span>
+                        </div>
+                    </a>
+                    <a href="#" class="other-work-item">
+                        <img src="assets/images/hero.png" alt="Other work 4" loading="lazy">
+                        <div class="overlay">
+                            <span data-i18n="other4">Shader Graph FX</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section bg-glass">
+            <div class="container">
+                <h2 class="section-title text-center" data-i18n="aboutTitle">About Me</h2>
+                <div class="about-content">
+                    <div class="profile-image-container">
+                        <img src="assets/images/profile.jpg" alt="Profile Picture" loading="lazy">
+                    </div>
+                    <div class="about-text-container">
+                        <p class="about-desc" data-i18n="aboutDesc">Experienced in Maya, Blender, Unreal Engine, Python,
+                            and C++.
+                            Download my full CV below for detailed work history and technical skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer bg-alt">
+        <div class="container text-center">
+            <p data-i18n="footerText">&copy; 2026 [Your Name]. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/locales.js"></script>
+    <script src="scripts/canvas-bg.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
