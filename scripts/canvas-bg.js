@@ -129,14 +129,28 @@ document.addEventListener("DOMContentLoaded", () => {
                     let forceDirectionX = dx / distance;
                     let forceDirectionY = dy / distance;
 
-                    // The closer to the mouse, the stronger the force
-                    let force = (mouse.radius - distance) / mouse.radius;
-                    let directionX = forceDirectionX * force * this.density * config.mouseForce;
-                    let directionY = forceDirectionY * force * this.density * config.mouseForce;
+                    let coreRadius = 40; // The radius of the "barrier"
 
-                    // Repel from mouse
-                    this.vx -= directionX;
-                    this.vy -= directionY;
+                    if (distance < coreRadius) {
+                        // Too close! Push away strongly to create the barrier effect
+                        let force = (coreRadius - distance) / coreRadius;
+                        let directionX = forceDirectionX * force * this.density * (config.mouseForce * 3);
+                        let directionY = forceDirectionY * force * this.density * (config.mouseForce * 3);
+                        this.vx -= directionX;
+                        this.vy -= directionY;
+                    } else {
+                        // Attract towards the barrier, decreasing force as they get closer (like a cushion)
+                        let force = (distance - coreRadius) / (mouse.radius - coreRadius);
+                        let directionX = forceDirectionX * force * this.density * (config.mouseForce * 0.4);
+                        let directionY = forceDirectionY * force * this.density * (config.mouseForce * 0.4);
+
+                        // Apply lighter friction so they keep some momentum and can escape when the mouse moves suddenly
+                        this.vx *= (0.92 + 0.08 * force);
+                        this.vy *= (0.92 + 0.08 * force);
+
+                        this.vx += directionX;
+                        this.vy += directionY;
+                    }
                 }
             }
 

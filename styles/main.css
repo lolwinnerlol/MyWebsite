@@ -309,8 +309,28 @@ section {
 /* --- Selected Works Section --- */
 .grid-works {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
+}
+
+@media (min-width: 900px) {
+    .grid-works {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .work-card:first-child {
+        grid-column: span 2;
+    }
+
+    /* Make the title specifically larger on the featured work card */
+    .work-card:first-child .overlay-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .work-card:first-child .overlay-content p {
+        font-size: 1.15rem;
+    }
 }
 
 .work-card {
@@ -319,6 +339,8 @@ section {
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    position: relative;
+    cursor: pointer;
 }
 
 .work-card:hover {
@@ -326,41 +348,76 @@ section {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
 
-.work-img-wrapper {
+.work-media-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 56.25%;
-    /* 16:9 Aspect Ratio */
+    aspect-ratio: 16 / 9;
     background-color: #000;
     overflow: hidden;
 }
 
-.work-img-wrapper img {
-    position: absolute;
-    top: 0;
-    left: 0;
+.work-media-wrapper video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 5s ease;
+    transition: filter var(--transition-normal) ease-in-out, transform 5s ease;
+    filter: blur(0px) brightness(1);
 }
 
-.work-card:hover .work-img-wrapper img {
+.work-card:hover .work-media-wrapper video {
     transform: scale(1.05);
+    filter: blur(10px) brightness(0.4);
 }
 
-.work-info {
-    padding: 1.5rem;
+.overlay-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: 2;
 }
 
-.work-info h3 {
+.work-card:hover .overlay-content {
+    opacity: 1;
+}
+
+.overlay-content h3 {
+    color: #fff;
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    transform: translateY(20px);
+    transition: transform var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.work-info p {
+.work-card:hover .overlay-content h3 {
+    transform: translateY(0);
+}
+
+.overlay-content p {
+    color: #f0f2f8;
     font-size: 0.95rem;
     margin-bottom: 1rem;
+    transform: translateY(20px);
+    transition: transform var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+}
+
+.work-card:hover .overlay-content p {
+    transform: translateY(0);
+}
+
+.overlay-content .tag {
+    transform: translateY(20px);
+    transition: transform var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.work-card:hover .overlay-content .tag {
+    transform: translateY(0);
 }
 
 .tag {
