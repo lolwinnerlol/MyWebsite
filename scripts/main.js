@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         elementsToTranslate.forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (locales[lang][key]) {
+                // Update href if it's a resume link
+                if (key === 'downloadResume' && el.tagName === 'A') {
+                    el.setAttribute('href', locales[lang].resumeUrl);
+                }
+
                 // Use innerHTML strictly for elements we know contain safe tags like <span class="highlight">
                 if (key === 'heroTitle') {
                     el.innerHTML = locales[lang][key];
@@ -99,5 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
         currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
         localStorage.setItem('theme', currentTheme);
         applyTheme(currentTheme);
+    });
+
+    // Scroll Effect for Header
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 });

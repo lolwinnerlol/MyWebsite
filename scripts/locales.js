@@ -23,7 +23,9 @@ const locales = {
         other4: "Shader Graph FX",
         aboutTitle: "About Me",
         aboutDesc: "I began studying 3D Animation seriously in 2021 while attending Suankularb Wittayalai School in Bangkok, and later enrolled at the College of Arts, Media and Technology (CAMT) at Chiang Mai University.\n\nDuring group projects, I studied Rigging and experimented with developing tools to help make the team's workflows more systematic and efficient.\n\nI am interested in the technical behind-the-scenes work of animation. I am ready to learn new skills and adapt continuously to grow in my career and support the team to work more effectively.",
-        footerText: "© 2026 Winner. All rights reserved."
+        contactMe: "Contact Me :",
+        resumeUrl: "assets/docs/Resume_EN.pdf",
+        footerText: "© 2026 Suthiphan Khamnong. All rights reserved."
     },
     th: {
         navName: "Artist Name",
@@ -48,7 +50,9 @@ const locales = {
         other3: "งานปั้นตัวละคร",
         other4: "Shader Graph FX",
         aboutTitle: "เกี่ยวกับผม",
-        aboutDesc: "ผมเริ่มศึกษาด้าน 3D Animation อย่างจริงจังในปี 2021 ระหว่างศึกษาอยู่ที่โรงเรียนสวนกุหลาบวิทยาลัย กรุงเทพมหานคร และต่อมาได้เข้าศึกษาที่วิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่\n\nระหว่างการทำโปรเจกต์กลุ่ม ผมได้ศึกษา Rigging และทดลองพัฒนาเครื่องมือเพื่อช่วยให้กระบวนการทำงานของทีมเป็นระบบและมีประสิทธิภาพมากขึ้น\n\nผมสนใจงานเบื้องหลังเชิงเทคนิคของงานแอนิเมชัน ผมพร้อมเรียนรู้ทักษะใหม่ ๆ และปรับตัวอย่างต่อเนื่อง เพื่อเติบโตในสายงานและสนับสนุนทีมให้ทำงานได้อย่างมีประสิทธิภาพยิ่งขึ้น",
-        footerText: "© 2026 สุธิพันธ์ ขำนอง สงวนลิขสิทธิ์"
+        aboutDesc: "ผมเริ่มศึกษาด้าน 3D Animation อย่างจริงจังในปี 2021 ระหว่างศึกษาอยู่ที่โรงเรียนสวนกุหลาบวิทยาลัย กรุงเทพมหานคร และต่อมาได้เข้าศึกษาที่วิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่\n\nระหว่างการทำโปรเจกต์กลุ่ม ผมได้มีความสนใจในด้าน Rigging และได้ทดลองพัฒนาเครื่องมือเพื่อช่วยให้กระบวนการทำงานของทีมเป็นระบบและมีประสิทธิภาพมากขึ้น\n\nผมสนใจงานเบื้องหลังเชิงเทคนิคของงานแอนิเมชัน ผมพร้อมเรียนรู้ทักษะใหม่ ๆ และปรับตัวอย่างต่อเนื่อง เพื่อเติบโตในสายงานและสนับสนุนทีมให้ทำงานได้อย่างมีประสิทธิภาพยิ่งขึ้น",
+        contactMe: "ติดต่อผม :",
+        resumeUrl: "assets/docs/Resume_TH.pdf",
+        footerText: "© 2026 Suthiphan Khamnong. All rights reserved."
     }
 };
