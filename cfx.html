@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Character Rig | Portfolio</title>
-    <meta name="description" content="Detail page for Advanced Character Rig">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
+    <title data-i18n="catCfx">CFX</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +23,6 @@
             <div class="theme-toggle">
                 <button id="theme-btn" aria-label="Toggle Theme"
                     style="background:none;border:none;cursor:pointer;color:var(--text-primary);padding:0;display:flex;align-items:center;">
-                    <!-- Sun Icon (for switching to light mode) -->
                     <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -38,7 +35,6 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                    <!-- Moon Icon (for switching to dark mode) -->
                     <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" width="24" height="24" style="display: none;">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -59,50 +55,33 @@
     </header>
 
     <main style="padding-top: 80px;">
-        <section class="works-section bg-glass" style="min-height: 80vh;">
+        <section class="works-section bg-glass" style="min-height: 80vh; padding-bottom: 6rem;">
             <div class="container container-sm">
                 <!-- Back Button -->
-                <a href="index.html#top-works" class="btn btn-outline"
+                <a href="index.html#other-works" class="btn btn-outline"
                     style="margin-bottom: 2rem; display: inline-block;" data-i18n="backToWorks">← Back to Works</a>
 
-                <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem;" data-i18n="work1Title">Advanced
-                    Character Rig</h1>
-                <span class="tag" style="margin-bottom: 2rem; display: inline-block;">Technical Art</span>
+                <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 1rem;" id="page-category-title"
+                    data-i18n="catCfx">CFX</h1>
+                <p class="category-subtitle"
+                    style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 4rem;"
+                    id="page-category-subtitle" data-i18n="catCfxSubtitle">Simulations of complex dynamics, including
+                    cloth, hair, and soft body physics.</p>
 
-                <div class="work-media-wrapper" style="border-radius: 8px; box-shadow: 0 12px 24px rgba(0,0,0,0.5);">
-                    <video src="assets/videos/Breakdance.mp4" autoplay loop muted controls playsinline
-                        style="width:100%; height:100%; object-fit: cover;"></video>
-                </div>
-
-                <div style="margin-top: 3rem;">
-                    <h2 style="color: var(--accent); margin-bottom: 1rem;" data-i18n="projectOverview">Project Overview
-                    </h2>
-                    <p style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 2rem;"
-                        data-i18n="work1FullDesc">Custom Python pipeline for automated facial rigging.</p>
-
-                    <h2 style="color: var(--accent); margin-bottom: 1rem;" data-i18n="technicalDetails">Technical
-                        Details</h2>
-                    <ul style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; padding-left: 1.5rem; font-size: 1.1rem;"
-                        data-i18n="work1TechList">
-                        <li>Developed in Python for Blender.</li>
-                        <li>Automated generation of facial control rigs.</li>
-                        <li>Optimized for real-time performance and animator usability.</li>
-                        <li>Reduced manual rigging time by over 80%.</li>
-                    </ul>
+                <div id="dynamic-projects-list">
+                    <!-- Projects will be rendered here by main.js -->
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer text-center bg-alt"
+    <footer class="site-footer bg-alt text-center"
         style="padding: 2rem 0; font-size: 0.9rem; border-top: 1px solid var(--border-color);">
         <div class="container">
-            <p data-i18n="footerText">© 2026 Winner. All rights reserved.</p>
+            <p data-i18n="footerText">© 2026 Suthiphan Khamnong. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="scripts/locales.js"></script>
     <script src="scripts/canvas-bg.js"></script>
     <script src="scripts/main.js"></script>

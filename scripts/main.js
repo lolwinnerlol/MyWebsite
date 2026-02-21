@@ -28,9 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     el.setAttribute('href', locales[lang].resumeUrl);
                 }
 
-                // Use innerHTML strictly for elements we know contain safe tags like <span class="highlight">
+                // Use innerHTML strictly for elements we know contain safe tags or lists
                 if (key === 'heroTitle') {
                     el.innerHTML = locales[lang][key];
+                } else if (Array.isArray(locales[lang][key])) {
+                    el.innerHTML = locales[lang][key].map(item => `<li>${item}</li>`).join('');
                 } else {
                     el.textContent = locales[lang][key];
                 }
@@ -39,6 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update document lang attribute
         document.documentElement.lang = lang;
+
+        // Re-render projects if on a category page
+        renderProjects(lang);
     }
 
     // Attach event listeners to switcher buttons
@@ -115,4 +120,48 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('scrolled');
         }
     });
-});
+
+    // Category Hover Effect (Home Page)
+    const categoryCapsules = document.querySelectorAll('.category-capsule');
+    const categoryBg = document.getElementById('category-bg');
+
+    categoryCapsules.forEach(capsule => {
+        capsule.addEventListener('mouseenter', () => {
+            const imgSrc = capsule.getAttribute('data-image');
+            if (imgSrc && categoryBg) {
+                categoryBg.style.backgroundImage = `url(${imgSrc})`;
+                categoryBg.classList.add('active');
+            }
+        });
+
+        capsule.addEventListener('mouseleave', () => {
+            if (categoryBg) {
+                categoryBg.classList.remove('active');
+            }
+        });
+    });
+
+    // Dynamic Category Page Rendering
+    function renderProjects(lang) {
+        const projectsListContainer = document.getElementById('dynamic-projects-list');
+        if (!projectsListContainer) return;
+
+        // Determine which category we are in based on filename
+        const fileName = window.location.pathname.split('/').pop() || 'index.html';
+        const categoryKey = fileName.replace('.html', '') + 'Projects'; // e.g. riggingProjects
+
+        if (!locales[lang][categoryKey]) return;
+
+        projectsListContainer.innerHTML = locales[lang][categoryKey].map(project => `
+            <div class="project-block" style="margin-bottom: 6rem; border-top: 1px solid var(--border-color); padding-top: 4rem;">
+                <div class="work-media-wrapper" style="border-radius: 8px; box-shadow: 0 12px 24px rgba(0,0,0,0.5); margin-bottom: 2.5rem; overflow: hidden; aspect-ratio: 16/9;">
+                    <img src="${project.image}" alt="${project.title}" style="width:100%; height:100%; object-fit: cover; display:block;">
+                </div>
+                <h2 style="color: var(--accent); margin-bottom: 1rem; font-size: 2rem;">${project.title}</h2>
+                <p style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 2rem; line-height: 1.8;">${project.desc}</p>
+            </div>
+        `).join('');
+    }
+
+    // Initial render call is already handled by setLanguage(currentLang) at line 55
+})

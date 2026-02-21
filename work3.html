@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloth Simulation Tool | Portfolio</title>
-    <meta name="description" content="Detail page for Cloth Simulation Tool">
+    <title>OGC-Driven Cloth Simulation | Portfolio</title>
+    <meta name="description" content="Detail page for OGC-Driven Cloth Simulation in Blender">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,10 +63,10 @@
             <div class="container container-sm">
                 <!-- Back Button -->
                 <a href="index.html#top-works" class="btn btn-outline"
-                    style="margin-bottom: 2rem; display: inline-block;">&larr; Back to Works</a>
+                    style="margin-bottom: 2rem; display: inline-block;" data-i18n="backToWorks">← Back to Works</a>
 
-                <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem;" data-i18n="work3Title">Cloth
-                    Simulation Tool</h1>
+                <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem;" data-i18n="work3Title">OGC-Driven
+                    Cloth Simulation in Blender</h1>
                 <span class="tag" style="margin-bottom: 2rem; display: inline-block;">Tool Dev</span>
 
                 <div class="work-media-wrapper" style="border-radius: 8px; box-shadow: 0 12px 24px rgba(0,0,0,0.5);">
@@ -75,17 +75,35 @@
                 </div>
 
                 <div style="margin-top: 3rem;">
-                    <h2 style="color: var(--accent); margin-bottom: 1rem;">Project Overview</h2>
-                    <p style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 2rem;"
-                        data-i18n="work3Desc">Custom VBD cloth solver implementation in Blender.</p>
+                    <!-- Project Overview -->
+                    <h2 style="color: var(--accent); margin-bottom: 1rem;" data-i18n="work3OverviewTitle">Project
+                        Overview</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 2.5rem; white-space: pre-wrap; line-height: 1.8;"
+                        data-i18n="work3OverviewDesc"></p>
 
-                    <h2 style="color: var(--accent); margin-bottom: 1rem;">Technical Details</h2>
-                    <ul
-                        style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; padding-left: 1.5rem; font-size: 1.1rem;">
-                        <li>Implemented a robust Verlet-Based Dynamics (VBD) algorithm from scratch.</li>
-                        <li>Handles self-collision and highly realistic fabric constraints.</li>
-                        <li>Extensive optimization to handle high-vertex meshes efficiently inside Blender.</li>
-                    </ul>
+                    <!-- Blender Issues -->
+                    <h2 style="color: var(--accent); margin-bottom: 1rem;" data-i18n="work3BlenderIssuesTitle">Blender's
+                        Internal Issues</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 2.5rem; white-space: pre-wrap; line-height: 1.8;"
+                        data-i18n="work3BlenderIssuesDesc"></p>
+
+                    <!-- OGC Solution -->
+                    <h2 style="color: var(--accent); margin-bottom: 1rem;" data-i18n="work3OgcSolutionTitle">Our OGC
+                        Solution</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 2.5rem; white-space: pre-wrap; line-height: 1.8;"
+                        data-i18n="work3OgcSolutionDesc"></p>
+
+                    <!-- Why It Matters -->
+                    <h2 style="color: var(--accent); margin-bottom: 1rem;" data-i18n="work3WhyItMattersTitle">Why It
+                        Matters</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 2.5rem; white-space: pre-wrap; line-height: 1.8;"
+                        data-i18n="work3WhyItMattersDesc"></p>
+
+                    <!-- References -->
+                    <h2 style="color: var(--accent); margin-bottom: 1rem;" data-i18n="work3ReferencesTitle">References
+                    </h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); white-space: pre-wrap; font-family: monospace; line-height: 1.6;"
+                        data-i18n="work3ReferencesDesc"></p>
                 </div>
             </div>
         </section>
@@ -95,7 +113,7 @@
     <footer class="site-footer text-center bg-alt"
         style="padding: 2rem 0; font-size: 0.9rem; border-top: 1px solid var(--border-color);">
         <div class="container">
-            <p data-i18n="footerText">© 2026 Winner. All rights reserved.</p>
+            <p data-i18n="footerText">© 2026 Suthiphan Khamnong. All rights reserved.</p>
         </div>
     </footer>
 

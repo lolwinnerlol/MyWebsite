@@ -92,8 +92,21 @@
             </div>
         </section>
 
+        <!-- Showreel Section -->
+        <section id="showreel" class="showreel-section bg-alt">
+            <div class="container container-sm">
+                <h2 class="section-title" data-i18n="showreelTitle">Showreel</h2>
+                <div class="video-container">
+                    <!-- Embed format is required for iframes -->
+                    <iframe src="https://www.youtube.com/embed/cIuZLpFBBHo" title="Showreel" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
         <!-- Top Works Section -->
-        <section id="top-works" class="works-section bg-alt">
+        <section id="top-works" class="works-section bg-glass">
             <div class="container">
                 <h2 class="section-title" data-i18n="topWorksTitle">Selected Works</h2>
                 <div class="grid-works">
@@ -129,8 +142,9 @@
                             <video src="assets/videos/test0001-0250.mkv" autoplay loop muted playsinline
                                 poster="assets/images/work3.png"></video>
                             <div class="work-info overlay-content">
-                                <h3 data-i18n="work3Title">Cloth Simulation Tool</h3>
-                                <p data-i18n="work3Desc">Custom VBD cloth solver implementation in Blender.</p>
+                                <h3 data-i18n="work3Title">OGC-Driven Cloth Simulation in Blender</h3>
+                                <p data-i18n="work3Desc">Custom OGC cloth solver implementation for high performance in
+                                    Blender.</p>
                                 <span class="tag">Tool Dev</span>
                             </div>
                         </div>
@@ -139,49 +153,22 @@
             </div>
         </section>
 
-        <!-- Showreel Section -->
-        <section id="showreel" class="showreel-section bg-glass">
-            <div class="container container-sm">
-                <h2 class="section-title" data-i18n="showreelTitle">Showreel</h2>
-                <div class="video-container">
-                    <!-- Replace src with your actual youtube/vimeo link -->
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Showreel" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- Lesser Works -->
-        <section id="other-works" class="other-works-section bg-alt">
-            <div class="container">
-                <h2 class="section-title text-center" data-i18n="otherWorksTitle">Additional Projects</h2>
-                <div class="grid-other-works">
-                    <!-- Smaller cards -->
-                    <a href="#" class="other-work-item">
-                        <img src="assets/images/work1.png" alt="Other work 1" loading="lazy">
-                        <div class="overlay">
-                            <span data-i18n="other1">Hard Surface Prop</span>
-                        </div>
-                    </a>
-                    <a href="#" class="other-work-item">
-                        <img src="assets/images/work2.png" alt="Other work 2" loading="lazy">
-                        <div class="overlay">
-                            <span data-i18n="other2">Python Script Suite</span>
-                        </div>
-                    </a>
-                    <a href="#" class="other-work-item">
-                        <img src="assets/images/work3.png" alt="Other work 3" loading="lazy">
-                        <div class="overlay">
-                            <span data-i18n="other3">Character Sculpt</span>
-                        </div>
-                    </a>
-                    <a href="#" class="other-work-item">
-                        <img src="assets/images/hero.png" alt="Other work 4" loading="lazy">
-                        <div class="overlay">
-                            <span data-i18n="other4">Shader Graph FX</span>
-                        </div>
-                    </a>
+        <!-- Additional Projects / Categories -->
+        <section id="other-works" class="other-works-section bg-alt project-categories-section">
+            <div class="category-bg-overlay" id="category-bg"></div>
+            <div class="container relative-z">
+                <h2 class="section-title text-center" data-i18n="otherWorksTitle">More Works by Category</h2>
+                <div class="filter-container text-center">
+                    <a href="rigging.html" class="category-capsule" data-image="assets/images/work1.png"
+                        data-i18n="catRigging">Rigging</a>
+                    <a href="cfx.html" class="category-capsule" data-image="assets/images/work3.png"
+                        data-i18n="catCfx">CFX</a>
+                    <a href="technical.html" class="category-capsule" data-image="assets/images/work2.png"
+                        data-i18n="catTechnical">Technical</a>
+                    <a href="modeling.html" class="category-capsule" data-image="assets/images/work1.png"
+                        data-i18n="catModeling">Modeling</a>
+                    <a href="others.html" class="category-capsule" data-image="assets/images/hero.png"
+                        data-i18n="catOthers">Others</a>
                 </div>
             </div>
         </section>
@@ -238,7 +225,7 @@
 
     <footer class="site-footer bg-alt">
         <div class="container text-center">
-            <p data-i18n="footerText">&copy; 2026 [Your Name]. All rights reserved.</p>
+            <p data-i18n="footerText">© 2026 Suthiphan Khamnong. All rights reserved.</p>
         </div>
     </footer>
 
